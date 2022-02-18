@@ -5,7 +5,9 @@ using UnityEngine;
 public class ComportamentoAsteroide : MonoBehaviour
 {
   public Rigidbody2D meuRigidBody;
-  public float velocidadeMaxima = 1.0f;
+  public ComportamentoAsteroide prefabAsteroideMenor;
+  public float velocidadeMaxima = 2.0f;
+  public int quantidadeFragmentos = 3;
 
   // Start is called before the first frame update
   void Start()
@@ -25,5 +27,10 @@ public class ComportamentoAsteroide : MonoBehaviour
   {
     Destroy(gameObject);
     Destroy(other.gameObject);
+
+    for (int i = 0; i < quantidadeFragmentos; i++)
+    {
+      Instantiate(prefabAsteroideMenor, meuRigidBody.position, Quaternion.identity);
+    }
   }
 }
