@@ -5,6 +5,8 @@ using UnityEngine;
 public class ComportamentoAsteroide : MonoBehaviour
 {
   public static System.Action EventoAsteroideDestruido = null;
+
+  public AudioSource meuAudioSource;
   public Rigidbody2D meuRigidBody;
   public ComportamentoAsteroide prefabAsteroideMenor;
   public float velocidadeMaxima = 2.0f;
@@ -26,8 +28,8 @@ public class ComportamentoAsteroide : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    Destroy(gameObject);
-    Destroy(other.gameObject);
+
+    meuAudioSource.Play();
 
     for (int i = 0; i < quantidadeFragmentos; i++)
     {
@@ -38,5 +40,8 @@ public class ComportamentoAsteroide : MonoBehaviour
     {
       EventoAsteroideDestruido();
     }
+
+    Destroy(gameObject);
+    Destroy(other.gameObject);
   }
 }

@@ -11,6 +11,8 @@ public class ComportamentoJogador : MonoBehaviour
   public Rigidbody2D prefabProjetil;
   public float velocidadeProjetil = 10.0f;
 
+  public float duracaoProjetilEmSegundos = 4.0f;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -23,6 +25,7 @@ public class ComportamentoJogador : MonoBehaviour
     {
       Rigidbody2D projetil = Instantiate(prefabProjetil, meuRigidBody.position, Quaternion.identity);
       projetil.velocity = transform.up * velocidadeProjetil;
+      Destroy(projetil.gameObject, duracaoProjetilEmSegundos);
     }
   }
 
