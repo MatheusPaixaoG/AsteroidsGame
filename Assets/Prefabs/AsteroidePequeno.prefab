@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199f789490e936242b081bb0627eb3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabEfeitos: {fileID: 8228980685439248557, guid: 025f7f681b6cd62469cdc8565e5ab531, type: 3}
   meuRigidBody: {fileID: 5045307824356131137}
   prefabAsteroideMenor: {fileID: 0}
   velocidadeMaxima: 1
